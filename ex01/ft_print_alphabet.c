@@ -1,11 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hwong <hwong@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/18 15:15:25 by hwong             #+#    #+#             */
+/*   Updated: 2022/08/18 15:15:25 by hwong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void ft_print_alphabet(void);
-
-void ft_print_alphabet(void)
+void	ft_print_alphabet(void)
 {
-    char alphabet;
-    for (alphabet='a';alphabet>='z';alphabet++){
-        write(1, &alphabet, 1);
-    }
+	char	alphabet;
+
+	alphabet = 'a';
+	while (alphabet <= 'z')
+	{
+		write(1, &alphabet, 1);
+		alphabet++;
+	}
 }
