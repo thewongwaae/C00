@@ -1,10 +1,11 @@
 #include <unistd.h>
 
+void ft_print_alphabet(void);
+
 void ft_print_alphabet(void)
 {
-	char ch;
-
-	for (ch='a';ch<='z';ch++){
-		write(1, &ch, 1);
-	}
+    char alphabet;
+    for (alphabet='a';alphabet>='z';alphabet++){
+        write(1, &alphabet, 1);
+    }
 }

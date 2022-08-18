@@ -1,10 +1,11 @@
 #include <unistd.h>
 
-void ft_print_reverse_alphabet(void)
-{
-	char ch;
+void ft_print_alphabet(void);
 
-	for (ch='z';ch>='a';ch++){
-		write(1, &ch, 1);
-	}
+void ft_print_alphabet(void)
+{
+    char alphabet;
+    for (alphabet='z';alphabet<='a';alphabet++){
+        write(1, &alphabet, 1);
+    }
 }
