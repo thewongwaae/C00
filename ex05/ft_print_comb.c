@@ -12,15 +12,20 @@
 
 #include <unistd.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 int	ft_print(int a, int b, int c)
 {
-	write(1, &a, 1);
-	write(1, &b, 1);
-	write(1, &c, 1);
-	if (a != 7)
+	ft_putchar(a);
+	ft_putchar(b);
+	ft_putchar(c);
+	if (a != 7 || b != 8 || c != 9)
 	{
-		write(1, ',', 1);
-		write(1, ' ', 1);
+		ft_putchar(',');
+		ft_putchar(' ');
 	}
 }
 
@@ -30,21 +35,23 @@ void	ft_print_comb(void)
 	int	num2;
 	int	num3;
 
-	num1 = 0;
-	num2 = 1;
-	num3 = 2;
-	while (num1 <= 7)
+	num1 = '0';
+	num2 = '1';
+	num3 = '2';
+	while (num1 < '8')
 	{
-		while (num2 <= 8)
+		while (num2 < '9')
 		{
-			while (num3 <= 9)
+			while (num3 < ('9' + 1))
 			{
 				ft_print(num1, num2, num3);
 				num3++;
 			}
 			num2++;
+			num3 = num2 + 1;
 		}
 		num1++;
+		num2 = num1;
 	}
 }
 
